@@ -2,6 +2,18 @@
 
 Plataforma SaaS para atendimento empresarial com IA e WhatsApp. **Estado atual: MVP demonstrativo, não pronto para operação comercial.**
 
+
+## Neon PostgreSQL (nova etapa)
+- Banco integrado pelo Vercel Marketplace: `onix-ai-connect-db`.
+- Cliente SQL server-side: `lib/db.ts` (`@neondatabase/serverless`).
+- Esquema inicial específico do Neon: `db/migrations/001_initial.sql`.
+- Verificação opcional de conexão local: `npm run db:check` (requer DATABASE_URL no ambiente privado).
+- **Pendente:** executar a migração no Neon SQL Editor; não foi executada automaticamente.
+- **Pendente:** login, autorização multiempresa, RLS, CRUD persistente, testes de build e integração de mensagens. Não use com dados reais nesta etapa.
+- `supabase/schema.sql` é um rascunho histórico, **não deve ser aplicado ao Neon**.
+
+Leia [db/README.md](db/README.md) antes de criar as tabelas.
+
 ## O que funciona nesta etapa
 - Interface responsiva em português e identidade visual ONIX.
 - Dashboard demonstrativo; cadastro de empresas e configuração de assistentes armazenados **somente no localStorage do navegador**.
